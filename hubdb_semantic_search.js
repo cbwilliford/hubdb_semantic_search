@@ -50,7 +50,7 @@ const createEmbeddings = async (input) => {
 const queryPinecone = async (vector) => {
 
   try {
-    const response = await fetch('https://hubvectordb-658345a.svc.asia-southeast1-gcp-free.pinecone.io/query', {
+    const response = await fetch(`https://hubvectordb-658345a.svc.${process.env.PINECONE_ENV}.pinecone.io/query`, {
     headers: {
       'Content-Type': 'application/json',
       'Api-Key': process.env.PINECONE_KEY,
